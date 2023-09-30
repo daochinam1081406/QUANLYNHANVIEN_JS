@@ -22,6 +22,21 @@ function renderUI(data) {
 
   for (var i = 0; i < data.length; i++) {
     var nhanvien = data[i];
+    var nhanvienT = new Nhanvien(
+      nhanvien.id,
+      nhanvien.taiKhoan,
+      nhanvien.hoTen,
+      nhanvien.email,
+      nhanvien.matKhau,
+      nhanvien.ngayLam,
+      nhanvien.luongCoBan,
+      nhanvien.chucVu,
+      nhanvien.tongLuong,
+      nhanvien.loaiNhanVien,
+      nhanvien.gioLam
+    );
+    nhanvienT.tinhTongLuong();
+    nhanvienT.xepLoai();
     content += `
           <tr>
               <td>${nhanvien.taiKhoan}</td>
@@ -30,8 +45,8 @@ function renderUI(data) {
               <td>${nhanvien.ngayLam}
               </td>
               <td>${nhanvien.chucVu}</td>
-              <td>${nhanvien.tongLuong}</td>
-              <td>${nhanvien.loaiNhanVien}</td>
+              <td>${nhanvienT.tongLuong}</td>
+              <td>${nhanvienT.loaiNhanVien}</td>
               <td>
                   <button class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="editNhanVien(${nhanvien.id})">Sửa</button>
                   <button class="btn btn-danger" onclick="deleteNhanVien(${nhanvien.id})">Xoá</button>

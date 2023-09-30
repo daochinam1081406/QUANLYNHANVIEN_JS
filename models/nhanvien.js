@@ -39,13 +39,17 @@ function Nhanvien(
   // Phương thức xếp loại dựa trên giờ làm việc
   this.xepLoai = function () {
     if (this.gioLam >= 192) {
-      return "Nhân viên xuất sắc";
+      this.loaiNhanVien = "Nhân viên xuất sắc";
+      return this.loaiNhanVien;
     } else if (this.gioLam >= 176) {
-      return "Nhân viên giỏi";
+      this.loaiNhanVien = "Nhân viên giỏi";
+      return this.loaiNhanVien;
     } else if (this.gioLam >= 160) {
-      return "Nhân viên khá";
+      this.loaiNhanVien = "Nhân viên khá";
+      return this.loaiNhanVien;
     } else {
-      return "Nhân viên trung bình";
+      this.loaiNhanVien = "Nhân viên trung bình";
+      return this.loaiNhanVien;
     }
   };
 }
